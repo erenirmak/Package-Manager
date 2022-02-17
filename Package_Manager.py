@@ -18,15 +18,17 @@ def exit():
 
 flag = 0
 while flag == 0:
-    selection = int(input("1. Install package(s)\n2. Update all packages\n"))
+    selection = int(input("1. Install package(s)\n2. Update all packages\n3. Exit\n"))
 
     if selection == 1:
-        pkg_name, pkg_ver = installer.get_package_info()
-        installer.package_installer(pkg_name, pkg_ver)
+        installer.package_installer()
         flag = exit()
 
     elif selection == 2:
         updater.updater()
+        flag = exit()
+
+    elif selection == 3:
         flag = exit()
 
     else:
