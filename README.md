@@ -1,9 +1,7 @@
 # Package-Manager
 
-Combined these:
+You can install, see information, uninstall python packages and auto-update all installed packages.
+It uses pip method for all features.
 
-Package Installer (https://github.com/erenirmak/Python-Package-Installer)
-
-Package Updater (https://github.com/erenirmak/Update-All-Packages)
-
-Just run make_executable.py and enjoy your executable. :)
+Clone Repo & Run make_executable.py
+Enjoy .exe program. :)
