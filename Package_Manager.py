@@ -1,6 +1,5 @@
 
-import installer
-import updater
+from manager import PackageManager
 
 def exit():
     exit_choice = input("\nWant to exit?\n1. Yes\n2. No\n")
@@ -16,21 +15,16 @@ def exit():
         input("Undefined selection.\nProgram will be terminated.")
         return 1
 
-flag = 0
-while flag == 0:
-    selection = int(input("1. Install package(s)\n2. Update all packages\n3. Exit\n"))
+while (1):
+    selection = int(input("1. Install package(s)\n2. Show package info\n3. Uninstall package(s)\n4. Update all packages\n5. Exit\n"))
 
-    if selection == 1:
-        installer.package_installer()
-        flag = exit()
+    manager_handler = PackageManager(selection)
 
-    elif selection == 2:
-        updater.updater()
-        flag = exit()
+    del manager_handler
 
-    elif selection == 3:
-        flag = exit()
-
-    else:
-        print("Undefined selection!")
-        flag = exit()
+    if selection == 5:
+        exit_handler = exit()
+        if exit_handler:
+            break
+        else:
+            continue
